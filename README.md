@@ -3,14 +3,15 @@
 
 ## 学习目录包含
 - Java
-  - [jvm](https://github.com/CyC2018/CS-Notes/blob/master/notes/剑指%20Offer%20题解%20-%20目录.md)
+  - [jvm](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/java/jvm.md)
+  
 - 计算机系统
 
 - 网络
 
 - 数据库
-  - [mysql](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/剑指%20Offer%20题解%20-%20目录.md)
-  - [redis](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/剑指%20Offer%20题解%20-%20目录.md)
+  - [mysql](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/database/mysql.md)
+  - [redis](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/database/redis.md)
 - 算法
 
 - 设计模式与面向对象 oo

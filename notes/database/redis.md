@@ -1,13 +1,12 @@
 <!-- GFM-TOC -->
 * [一、redis原理](#redis原理)
 * [二、reidis数据结构](#reidis数据结构)
-    * [什么是事务](##什么是事务？他有什么特性？)
-    * [事务隔离](##事务隔离)
-* [三、锁机制](#锁机制)
-* [四、索引](#索引)
-* [五、分库分表](#分库分表)
-    * [水平拆分](##水平拆分)
-    * [垂直拆分](##垂直拆分)
+* [三、reidis集群、主从机制](#reidis集群、主从机制)
+* [四、redis哨兵-Sentinel ](#redis哨兵-Sentinel)
+* [五、redis订阅发布](#redis订阅发布)
+* [六、nosql的比较](#nosql的比较)
+* [七、redis内存淘汰机制](#redis内存淘汰机制)
+* [八、使用场景](#使用场景)
 <!-- GFM-TOC -->
 
 # redis原理
@@ -40,6 +39,7 @@ redis的读写是采用了<font color=red>**单线程的 io 多路复用**</font
 redis数据结构为k-v对应的数据，不同于mysql,oracle等的数据行
 
 ## String
+
 ```
 >set key value
 OK
@@ -51,14 +51,77 @@ value
 
 ## List
 
+### 有序列表，实现为链表
+```
+---添加集合元素
+>lpush testKey value1
+1
+>lpush testKey value2
+1
+---获取所有集合元素
+>lrange testKey 0 -1
+1) value2
+2) value1
+---从链表头部拿出一个元素
+>lpop testKey
+value2
+```
+
 ## Set
+
+### 无序列表，通过hash实现插入，不允许重复，查询复杂度 O(1)
+
+```
+---添加集合元素
+>sadd testKey value1
+1
+>sadd testKey value2
+1
+---获取集合成员数
+>SCARD testKey
+2
+---获取集合成员
+>smembers testKey
+value2
+value1
+---从set中拿出一个元素
+>spop testKey
+value2
+```
 
 ## Zset
 
-# reidis集群机制及搭建
+### 有序列表
 
-# redis哨兵主从复制集群
+```
+---添加集合元素
+>zadd testKey 1 value1
+1
+>zadd testKey 2 value2
+1
+---获取集合成员数
+>zcard testKey
+2
+---获取集合成员
+>zrange testKey 0 -1
+value1
+value2
+---从zset中拿出一个元素
+>zrem testKey value2
+value2
+```
+
+# reidis集群、主从机制
+ redis 提供了集群机制应对单机瓶颈，还有不错主从的容错机制。
+
+# redis哨兵-Sentinel
+当集群情况下，哨兵担任监听者的职责观察，当主服务 down 掉会在从服务器中推举出新的主服务器。
 
 # redis订阅发布
+redis还提供发布订阅功能，思想相当于观察者模式
 
 # nosql的比较
+
+# redis内存淘汰机制
+
+# 使用场景

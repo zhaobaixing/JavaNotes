@@ -3,7 +3,7 @@
 
 ## 学习目录包含
 - Java
-  - [jvm](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/java/jvm.md)
+  - [JVM](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/java/jvm.md)
 
 - 计算机系统
   - [linux]()
@@ -15,9 +15,10 @@
 - 数据库
   - [mysql](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/database/mysql.md)
   - [redis](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/database/redis.md)
+
 - 算法
-  - [计算机网络模型]()
-  - [HTTP]()
+  - [算法基础]()
+  - [leetcode题解]()
 
 - 设计模式与面向对象(oo)
   - [23种设计模式]()
@@ -34,3 +35,8 @@
   - [系统架构设计基础]()
   - [微服务架构]()
   - [消息队列]()
+## TODO list
+- [] redis部分补充
+- [] JVM完善
+- [] 计算机网络模型
+- [] HTTP

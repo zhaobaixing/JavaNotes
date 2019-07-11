@@ -4,20 +4,33 @@
 ## 学习目录包含
 - Java
   - [jvm](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/java/jvm.md)
-  
+
 - 计算机系统
+  - [linux]()
 
 - 网络
+  - [计算机网络模型]()
+  - [HTTP]()
 
 - 数据库
   - [mysql](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/database/mysql.md)
   - [redis](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/database/redis.md)
 - 算法
+  - [计算机网络模型]()
+  - [HTTP]()
 
-- 设计模式与面向对象 oo
+- 设计模式与面向对象(oo)
+  - [23种设计模式]()
+  - [UML]()
+  - [TDD和DDD]()
 
 - 编码规范
+  - [解读阿里巴巴编码规范总结]()
 
 - 网络安全
+  - [加密算法]()
 
 - 架构设计
+  - [系统架构设计基础]()
+  - [微服务架构]()
+  - [消息队列]()

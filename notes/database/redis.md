@@ -4,9 +4,9 @@
 * [三、reidis集群、主从机制](#reidis集群、主从机制)
 * [四、redis哨兵-Sentinel ](#redis哨兵-Sentinel)
 * [五、redis订阅发布](#redis订阅发布)
-* [六、nosql的比较](#nosql的比较)
-* [七、redis内存淘汰机制](#redis内存淘汰机制)
-* [八、使用场景](#使用场景)
+* [六、redis内存淘汰机制](#redis内存淘汰机制)
+* [七、使用场景](#使用场景)
+* [八、nosql的比较](#nosql的比较)
 <!-- GFM-TOC -->
 
 # redis原理
@@ -120,8 +120,31 @@ value2
 # redis订阅发布
 redis还提供发布订阅功能，思想相当于观察者模式
 
-# nosql的比较
-
 # redis内存淘汰机制
 
+| 策略名 | 描述 |
+| ------ | ------ |
+| volatile-lru |从已设置过期时间的数据集中挑选最近最少使用的数据淘汰|
+| volatile-ttl |从已设置过期时间的数据集中挑选将要过期的数据淘汰|
+| volatile-random |从已设置过期时间的数据集中任意选择数据淘汰|
+| allkeys-lru |从所有数据集中挑选最近最少使用的数据淘汰|
+| allkeys-random |从所有数据集中任意选择数据进行淘汰|
+| noeviction |禁止驱逐数据|
+
 # 使用场景
+
+### 缓存
+redis作为k-v的非关系型数据库，数据存储在内存当中。相对于关系型数据库的普遍存储方式来说，io 读写非常快。
+
+### 消息队列
+redis存在list,set等集合。可以使用线程监听等方法pop出栈消费消息，push入栈消息。一般最好选用kafka,rabbitmq等可靠的消息中间件做消息队列。
+
+# nosql的比较
+
+Redis、Memcache和MongoDB的对比
+
+| nosql | 性能 | 灾备回复 |
+| ------ | ------ | ------ |
+| Redis |高|支持持久化操作（快照、AOF）|
+| Memcache |高|不支持|
+| MongoDB |高|支持持久化操作（binlog）|

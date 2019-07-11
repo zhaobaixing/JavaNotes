@@ -52,14 +52,20 @@ mvcc仅在读已提交和可重复读两个隔离状态下工作。因为读未�
 ### 事务隔离
 由于数据库并发事务的存在。由于不同的事务隔离等级导致的，脏读、不可重复读、幻读。
 
-1.脏读为一个事务读取到了另个事务未提交的数据，这种问题通常发生在读未提交(Read UnCommitted)的事务隔离级别
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190619233909709.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlZXBWaXNpb24=,size_16,color_FFFFFF,t_70)
+1.脏读为一个事务读取到了另个事务未提交的数据，这种问题通常发生在读未提交(Read UnCommitted)的事务隔离级别.
+
+![在这里插入图片描述](/assects/database/20190619233909709.png)
+
 2.不可重复读通常发生在读已提交级别下的所有级别（Read Committed）包括读未提交，不可重复读强调更新。
 当事务A开启并第一次查询t_user表数据这时候我们看到的是原始数据，name叫小王，随后事务B更新name为balabala并提交事务B,
 这时A事务再次查询时则name已经是balabala而不是小王了。这就是不可重复读。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019061923564097.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlZXBWaXNpb24=,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](/assects/database/2019061923564097.png)
+
 3.幻读，幻读通常发生在可重复读隔离级别下的所有级别，包括读未提交、读已提交级别。幻读强调插入和删除。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190620000708393.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlZXBWaXNpb24=,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](/assects/database/20190620000708393.png)
+
 四种隔离级别强度:读未提交<读已提交<可重复读<串行化
 值得一提的是mysql默认的隔离机制为可重复读，隔离机制越严格数据库的性能也会越低，更容易发生死锁。
 
@@ -86,11 +92,13 @@ mysql索引使用的是B+树
 # 分库分表
 ### 水平拆分 
 水平拆分是指数据表行的拆分，表的行数超过200万行时，就会变慢，这时可以把一张的表的数据拆成多张表来存放。 优点就是客户端基本不需要改动。其缺点就是要解决数据分片。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190623202407988.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlZXBWaXNpb24=,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](/assects/database/20190623202407988.png)
 
 ### 垂直拆分 
 垂直拆分是把原本数据量较大，列较多的表拆分成多张表。分散单表索引量，提升单表查询效率。其缺点是数据表难以维护，表间关系复杂外键过多。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190623202511507.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlZXBWaXNpb24=,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](/assects/database/20190623202511507.png)
 
 <font color=red>事务分片的几种解决方案：</font>
 - <font color=red>客户端代理jar包：当当网的sharding-jdbc(开源)</font>，阿里的TDDL（暂未开源）

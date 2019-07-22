@@ -6,11 +6,14 @@
   - [JVM](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/java/jvm.md)
 
 - 计算机系统
-  - [linux]()
+  - [linux](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/csos/linux.md)
 
 - 网络
   - [计算机网络模型]()
   - [HTTP]()
+
+- 编码规范
+  - [解读阿里巴巴编码规范总结]()
 
 - 数据库
   - [mysql](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/database/mysql.md)
@@ -25,16 +28,14 @@
   - [UML]()
   - [TDD和DDD]()
 
-- 编码规范
-  - [解读阿里巴巴编码规范总结]()
-
-- 网络安全
-  - [加密算法]()
-
 - 架构设计
   - [系统架构设计基础]()
   - [微服务架构]()
   - [消息队列]()
+
+
+- 网络安全
+  - [加密算法]()
 
 - [数学]()
 ## TODO list

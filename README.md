@@ -20,18 +20,18 @@
   - [redis](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/database/redis.md)
 
 - 算法
-  - [算法基础]()
-  - [leetcode题解]()
+  - [算法基础](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/algorithm/算法基础.md)
+  - [leetcode题解](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/algorithm/算法基础.md)
 
 - 设计模式与面向对象(oo)
-  - [23种设计模式]()
-  - [UML]()
-  - [TDD和DDD]()
+  - [23种设计模式](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/designPatternOO/23种设计模式.md)
+  - [UML](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/designPatternOO/UML.md)
 
 - 架构设计
   - [系统架构设计基础]()
   - [微服务架构]()
   - [消息队列]()
+  - [TDD和DDD]
 
 
 - 网络安全
@@ -39,6 +39,5 @@
 
 - [数学]()
 ## TODO list
-- [ ] redis部分补充
 - [ ] JVM完善，jdk源码解析
 - [ ] 设计模式，重构设计

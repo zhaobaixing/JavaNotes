@@ -3,7 +3,7 @@
 
 ## 学习目录包含
 - Java
-  - [JVM](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/java/jvm.md)
+  - [JVM](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/java/JVM.md)
 
 - 计算机系统
   - [linux](https://github.com/zhaobaixing/JavaNotes/blob/master/notes/csos/linux.md)
